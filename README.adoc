@@ -1,0 +1,8 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+= zig-prover-ffi
+
+Zig FFI bindings for theorem provers (Z3, CVC5).
+
+== License
+
+AGPL-3.0-or-later
