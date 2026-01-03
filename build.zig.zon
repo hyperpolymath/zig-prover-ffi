@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 .{
-    .name = .@"zig-prover-ffi",
+    .name = .zig_prover_ffi,
     .version = "0.1.0",
     .fingerprint = 0xfeedfacedeadbeef,
     .minimum_zig_version = "0.14.0",
