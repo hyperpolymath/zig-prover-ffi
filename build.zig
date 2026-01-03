@@ -5,6 +5,14 @@ pub fn build(b: *std.Build) void {
     const target = b.standardTargetOptions(.{});
     const optimize = b.standardOptimizeOption(.{});
 
+    // Module for use as a dependency
+    const prover_module = b.addModule("zig-prover-ffi", .{
+        .root_source_file = b.path("src/main.zig"),
+        .target = target,
+        .optimize = optimize,
+    });
+    _ = prover_module;
+
     // Static library
     const lib = b.addLibrary(.{
         .name = "zig-prover-ffi",
