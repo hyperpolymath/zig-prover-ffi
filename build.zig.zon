@@ -2,7 +2,7 @@
 .{
     .name = .zig_prover_ffi,
     .version = "0.1.0",
-    .fingerprint = 0xfeedfacedeadbeef,
+    .fingerprint = 0x7ab0c5fae53dd20f,
     .minimum_zig_version = "0.14.0",
 
     .dependencies = .{},
