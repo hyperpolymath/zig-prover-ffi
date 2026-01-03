@@ -239,7 +239,12 @@ pub const ProverClient = struct {
             .coq => self.runProver(&[_][]const u8{ "coqc", file_path }),
             .lean => self.runProver(&[_][]const u8{ "lean", file_path }),
             .agda => self.runProver(&[_][]const u8{ "agda", file_path }),
-            .isabelle => self.runProver(&[_][]const u8{ "isabelle", "build", "-D", file_path }),
+            .isabelle => blk: {
+                // Isabelle builds sessions from ROOT files, not individual .thy files
+                // Get the directory containing the .thy file
+                const dir = std.fs.path.dirname(file_path) orelse ".";
+                break :blk self.runProver(&[_][]const u8{ "isabelle", "build", "-d", dir, "-a" });
+            },
             .metamath => self.runProver(&[_][]const u8{ "metamath", file_path }),
             .hol_light => self.runProver(&[_][]const u8{ "hol_light", file_path }),
             .mizar => self.runProver(&[_][]const u8{ "mizar", file_path }),
