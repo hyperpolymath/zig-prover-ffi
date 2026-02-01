@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: PMPL-1.0
+// SPDX-License-Identifier: PMPL-1.0-or-later
 = zig-prover-ffi
 
 Zig FFI bindings for theorem provers (Z3, CVC5).
